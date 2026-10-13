@@ -1,0 +1,2085 @@
+[
+ {
+  "key": "leads",
+  "apiPath": "leads",
+  "label": "سرنخ‌ها",
+  "singular": "سرنخ",
+  "group": "sales",
+  "titleField": "name",
+  "statusField": "status",
+  "fields": [
+   {
+    "name": "name",
+    "label": "نام و نام خانوادگی",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "company",
+    "label": "شرکت",
+    "type": "text",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "phone",
+    "label": "تلفن همراه",
+    "type": "phone",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "email",
+    "label": "ایمیل",
+    "type": "email",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "status",
+    "label": "وضعیت",
+    "type": "select",
+    "required": true,
+    "options": {
+     "new": "جدید",
+     "contacted": "تماس گرفته شد",
+     "qualified": "واجد شرایط",
+     "nurturing": "در حال پرورش",
+     "lost": "از دست رفته",
+     "converted": "تبدیل شده"
+    },
+    "ref": null
+   },
+   {
+    "name": "source",
+    "label": "منبع",
+    "type": "select",
+    "required": false,
+    "options": {
+     "web": "وب‌سایت",
+     "referral": "معرفی",
+     "exhibition": "نمایشگاه",
+     "cold": "تماس سرد",
+     "social": "شبکه اجتماعی",
+     "partner": "همکار"
+    },
+    "ref": null
+   },
+   {
+    "name": "rating",
+    "label": "امتیاز",
+    "type": "select",
+    "required": false,
+    "options": {
+     "hot": "داغ",
+     "warm": "گرم",
+     "cold": "سرد"
+    },
+    "ref": null
+   },
+   {
+    "name": "industry",
+    "label": "صنعت",
+    "type": "select",
+    "required": false,
+    "options": {
+     "tech": "فناوری اطلاعات",
+     "manufacturing": "تولیدی",
+     "trade": "بازرگانی",
+     "health": "سلامت",
+     "education": "آموزش",
+     "construction": "ساخت‌وساز",
+     "finance": "مالی"
+    },
+    "ref": null
+   },
+   {
+    "name": "campaign",
+    "label": "کمپین",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "campaigns"
+   },
+   {
+    "name": "city",
+    "label": "شهر",
+    "type": "text",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "expectedRevenue",
+    "label": "درآمد مورد انتظار",
+    "type": "money",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "assignedTo",
+    "label": "مسئول",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "users"
+   },
+   {
+    "name": "description",
+    "label": "توضیحات",
+    "type": "textarea",
+    "required": false,
+    "options": null,
+    "ref": null
+   }
+  ]
+ },
+ {
+  "key": "contacts",
+  "apiPath": "contacts",
+  "label": "مخاطبین",
+  "singular": "مخاطب",
+  "group": "sales",
+  "titleField": "name",
+  "statusField": null,
+  "fields": [
+   {
+    "name": "name",
+    "label": "نام و نام خانوادگی",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "organization",
+    "label": "سازمان",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "organizations"
+   },
+   {
+    "name": "title",
+    "label": "سمت",
+    "type": "text",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "phone",
+    "label": "تلفن همراه",
+    "type": "phone",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "email",
+    "label": "ایمیل",
+    "type": "email",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "city",
+    "label": "شهر",
+    "type": "text",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "doNotCall",
+    "label": "تماس گرفته نشود",
+    "type": "boolean",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "assignedTo",
+    "label": "مسئول",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "users"
+   },
+   {
+    "name": "description",
+    "label": "توضیحات",
+    "type": "textarea",
+    "required": false,
+    "options": null,
+    "ref": null
+   }
+  ]
+ },
+ {
+  "key": "organizations",
+  "apiPath": "organizations",
+  "label": "سازمان‌ها",
+  "singular": "سازمان",
+  "group": "sales",
+  "titleField": "name",
+  "statusField": null,
+  "fields": [
+   {
+    "name": "name",
+    "label": "نام سازمان",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "industry",
+    "label": "صنعت",
+    "type": "select",
+    "required": false,
+    "options": {
+     "tech": "فناوری اطلاعات",
+     "manufacturing": "تولیدی",
+     "trade": "بازرگانی",
+     "health": "سلامت",
+     "education": "آموزش",
+     "construction": "ساخت‌وساز",
+     "finance": "مالی"
+    },
+    "ref": null
+   },
+   {
+    "name": "phone",
+    "label": "تلفن",
+    "type": "phone",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "email",
+    "label": "ایمیل",
+    "type": "email",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "website",
+    "label": "وب‌سایت",
+    "type": "url",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "city",
+    "label": "شهر",
+    "type": "text",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "annualRevenue",
+    "label": "درآمد سالانه",
+    "type": "money",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "employees",
+    "label": "تعداد کارکنان",
+    "type": "number",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "assignedTo",
+    "label": "مسئول",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "users"
+   },
+   {
+    "name": "address",
+    "label": "نشانی",
+    "type": "text",
+    "required": false,
+    "options": null,
+    "ref": null
+   }
+  ]
+ },
+ {
+  "key": "opportunities",
+  "apiPath": "opportunities",
+  "label": "فرصت‌های فروش",
+  "singular": "فرصت فروش",
+  "group": "sales",
+  "titleField": "name",
+  "statusField": "stage",
+  "fields": [
+   {
+    "name": "name",
+    "label": "عنوان فرصت",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "organization",
+    "label": "سازمان",
+    "type": "lookup",
+    "required": true,
+    "options": null,
+    "ref": "organizations"
+   },
+   {
+    "name": "contact",
+    "label": "مخاطب",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "contacts"
+   },
+   {
+    "name": "stage",
+    "label": "مرحله",
+    "type": "select",
+    "required": true,
+    "options": {
+     "prospecting": "شناسایی",
+     "qualification": "ارزیابی",
+     "proposal": "ارائه پیشنهاد",
+     "negotiation": "مذاکره",
+     "won": "برنده",
+     "lost": "بازنده"
+    },
+    "ref": null
+   },
+   {
+    "name": "amount",
+    "label": "مبلغ",
+    "type": "money",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "probability",
+    "label": "احتمال موفقیت (٪)",
+    "type": "number",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "closeDate",
+    "label": "تاریخ بسته شدن",
+    "type": "date",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "source",
+    "label": "منبع",
+    "type": "select",
+    "required": false,
+    "options": {
+     "web": "وب‌سایت",
+     "referral": "معرفی",
+     "exhibition": "نمایشگاه",
+     "cold": "تماس سرد",
+     "social": "شبکه اجتماعی",
+     "partner": "همکار"
+    },
+    "ref": null
+   },
+   {
+    "name": "assignedTo",
+    "label": "مسئول",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "users"
+   },
+   {
+    "name": "description",
+    "label": "توضیحات",
+    "type": "textarea",
+    "required": false,
+    "options": null,
+    "ref": null
+   }
+  ]
+ },
+ {
+  "key": "quotes",
+  "apiPath": "quotes",
+  "label": "پیش‌فاکتورها",
+  "singular": "پیش‌فاکتور",
+  "group": "sales",
+  "titleField": "number",
+  "statusField": "status",
+  "fields": [
+   {
+    "name": "number",
+    "label": "شماره",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "subject",
+    "label": "موضوع",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "organization",
+    "label": "سازمان",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "organizations"
+   },
+   {
+    "name": "status",
+    "label": "وضعیت",
+    "type": "select",
+    "required": false,
+    "options": {
+     "draft": "پیش‌نویس",
+     "sent": "ارسال شده",
+     "accepted": "پذیرفته شده",
+     "rejected": "رد شده",
+     "expired": "منقضی"
+    },
+    "ref": null
+   },
+   {
+    "name": "opportunity",
+    "label": "فرصت فروش",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "opportunities"
+   },
+   {
+    "name": "validUntil",
+    "label": "معتبر تا",
+    "type": "date",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "total",
+    "label": "مبلغ کل",
+    "type": "money",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "assignedTo",
+    "label": "مسئول",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "users"
+   }
+  ]
+ },
+ {
+  "key": "salesOrders",
+  "apiPath": "sales-orders",
+  "label": "سفارش‌های فروش",
+  "singular": "سفارش فروش",
+  "group": "sales",
+  "titleField": "number",
+  "statusField": "status",
+  "fields": [
+   {
+    "name": "number",
+    "label": "شماره",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "subject",
+    "label": "موضوع",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "organization",
+    "label": "سازمان",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "organizations"
+   },
+   {
+    "name": "status",
+    "label": "وضعیت",
+    "type": "select",
+    "required": false,
+    "options": {
+     "created": "ایجاد شده",
+     "approved": "تأیید شده",
+     "delivered": "تحویل شده",
+     "cancelled": "لغو شده"
+    },
+    "ref": null
+   },
+   {
+    "name": "quote",
+    "label": "پیش‌فاکتور",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "quotes"
+   },
+   {
+    "name": "dueDate",
+    "label": "تاریخ تحویل",
+    "type": "date",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "total",
+    "label": "مبلغ کل",
+    "type": "money",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "assignedTo",
+    "label": "مسئول",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "users"
+   }
+  ]
+ },
+ {
+  "key": "invoices",
+  "apiPath": "invoices",
+  "label": "فاکتورها",
+  "singular": "فاکتور",
+  "group": "sales",
+  "titleField": "number",
+  "statusField": "status",
+  "fields": [
+   {
+    "name": "number",
+    "label": "شماره",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "subject",
+    "label": "موضوع",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "organization",
+    "label": "سازمان",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "organizations"
+   },
+   {
+    "name": "status",
+    "label": "وضعیت",
+    "type": "select",
+    "required": false,
+    "options": {
+     "draft": "پیش‌نویس",
+     "sent": "ارسال شده",
+     "paid": "پرداخت شده",
+     "overdue": "سررسید گذشته",
+     "cancelled": "لغو شده"
+    },
+    "ref": null
+   },
+   {
+    "name": "salesOrder",
+    "label": "سفارش فروش",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "salesOrders"
+   },
+   {
+    "name": "issueDate",
+    "label": "تاریخ صدور",
+    "type": "date",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "dueDate",
+    "label": "سررسید",
+    "type": "date",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "total",
+    "label": "مبلغ کل",
+    "type": "money",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "assignedTo",
+    "label": "مسئول",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "users"
+   }
+  ]
+ },
+ {
+  "key": "purchaseOrders",
+  "apiPath": "purchase-orders",
+  "label": "سفارش‌های خرید",
+  "singular": "سفارش خرید",
+  "group": "sales",
+  "titleField": "number",
+  "statusField": "status",
+  "fields": [
+   {
+    "name": "number",
+    "label": "شماره",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "vendor",
+    "label": "تأمین‌کننده",
+    "type": "lookup",
+    "required": true,
+    "options": null,
+    "ref": "vendors"
+   },
+   {
+    "name": "status",
+    "label": "وضعیت",
+    "type": "select",
+    "required": false,
+    "options": {
+     "created": "ایجاد شده",
+     "approved": "تأیید شده",
+     "received": "دریافت شده",
+     "cancelled": "لغو شده"
+    },
+    "ref": null
+   },
+   {
+    "name": "orderDate",
+    "label": "تاریخ سفارش",
+    "type": "date",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "total",
+    "label": "مبلغ کل",
+    "type": "money",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "assignedTo",
+    "label": "مسئول",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "users"
+   },
+   {
+    "name": "description",
+    "label": "توضیحات",
+    "type": "textarea",
+    "required": false,
+    "options": null,
+    "ref": null
+   }
+  ]
+ },
+ {
+  "key": "serviceContracts",
+  "apiPath": "service-contracts",
+  "label": "قراردادهای خدماتی",
+  "singular": "قرارداد خدماتی",
+  "group": "sales",
+  "titleField": "number",
+  "statusField": "status",
+  "fields": [
+   {
+    "name": "number",
+    "label": "شماره قرارداد",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "organization",
+    "label": "سازمان",
+    "type": "lookup",
+    "required": true,
+    "options": null,
+    "ref": "organizations"
+   },
+   {
+    "name": "status",
+    "label": "وضعیت",
+    "type": "select",
+    "required": false,
+    "options": {
+     "active": "فعال",
+     "pending": "در انتظار",
+     "expired": "منقضی"
+    },
+    "ref": null
+   },
+   {
+    "name": "startDate",
+    "label": "شروع",
+    "type": "date",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "endDate",
+    "label": "پایان",
+    "type": "date",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "value",
+    "label": "ارزش قرارداد",
+    "type": "money",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "assignedTo",
+    "label": "مسئول",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "users"
+   }
+  ]
+ },
+ {
+  "key": "products",
+  "apiPath": "products",
+  "label": "محصولات",
+  "singular": "محصول",
+  "group": "catalog",
+  "titleField": "name",
+  "statusField": null,
+  "fields": [
+   {
+    "name": "name",
+    "label": "نام محصول",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "sku",
+    "label": "کد کالا",
+    "type": "text",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "category",
+    "label": "دسته‌بندی",
+    "type": "select",
+    "required": false,
+    "options": {
+     "software": "نرم‌افزار",
+     "hardware": "سخت‌افزار",
+     "network": "شبکه",
+     "accessories": "لوازم جانبی"
+    },
+    "ref": null
+   },
+   {
+    "name": "vendor",
+    "label": "تأمین‌کننده",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "vendors"
+   },
+   {
+    "name": "price",
+    "label": "قیمت واحد",
+    "type": "money",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "stock",
+    "label": "موجودی",
+    "type": "number",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "active",
+    "label": "فعال",
+    "type": "boolean",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "description",
+    "label": "توضیحات",
+    "type": "textarea",
+    "required": false,
+    "options": null,
+    "ref": null
+   }
+  ]
+ },
+ {
+  "key": "services",
+  "apiPath": "services",
+  "label": "خدمات",
+  "singular": "خدمت",
+  "group": "catalog",
+  "titleField": "name",
+  "statusField": null,
+  "fields": [
+   {
+    "name": "name",
+    "label": "نام خدمت",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "code",
+    "label": "کد خدمت",
+    "type": "text",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "category",
+    "label": "دسته‌بندی",
+    "type": "select",
+    "required": false,
+    "options": {
+     "consulting": "مشاوره",
+     "support": "پشتیبانی",
+     "training": "آموزش",
+     "installation": "نصب و راه‌اندازی"
+    },
+    "ref": null
+   },
+   {
+    "name": "price",
+    "label": "تعرفه",
+    "type": "money",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "hours",
+    "label": "ساعت کاری",
+    "type": "number",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "active",
+    "label": "فعال",
+    "type": "boolean",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "description",
+    "label": "توضیحات",
+    "type": "textarea",
+    "required": false,
+    "options": null,
+    "ref": null
+   }
+  ]
+ },
+ {
+  "key": "priceBooks",
+  "apiPath": "price-books",
+  "label": "لیست‌های قیمت",
+  "singular": "لیست قیمت",
+  "group": "catalog",
+  "titleField": "name",
+  "statusField": null,
+  "fields": [
+   {
+    "name": "name",
+    "label": "نام لیست",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "status",
+    "label": "وضعیت",
+    "type": "select",
+    "required": false,
+    "options": {
+     "active": "فعال",
+     "inactive": "غیرفعال"
+    },
+    "ref": null
+   },
+   {
+    "name": "discountPct",
+    "label": "تخفیف (٪)",
+    "type": "number",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "validFrom",
+    "label": "از تاریخ",
+    "type": "date",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "validTo",
+    "label": "تا تاریخ",
+    "type": "date",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "description",
+    "label": "توضیحات",
+    "type": "textarea",
+    "required": false,
+    "options": null,
+    "ref": null
+   }
+  ]
+ },
+ {
+  "key": "vendors",
+  "apiPath": "vendors",
+  "label": "تأمین‌کنندگان",
+  "singular": "تأمین‌کننده",
+  "group": "catalog",
+  "titleField": "name",
+  "statusField": null,
+  "fields": [
+   {
+    "name": "name",
+    "label": "نام تأمین‌کننده",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "phone",
+    "label": "تلفن",
+    "type": "phone",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "email",
+    "label": "ایمیل",
+    "type": "email",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "city",
+    "label": "شهر",
+    "type": "text",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "website",
+    "label": "وب‌سایت",
+    "type": "url",
+    "required": false,
+    "options": null,
+    "ref": null
+   }
+  ]
+ },
+ {
+  "key": "inventory",
+  "apiPath": "inventory",
+  "label": "موجودی انبار",
+  "singular": "ردیف موجودی",
+  "group": "catalog",
+  "titleField": "sku",
+  "statusField": "status",
+  "fields": [
+   {
+    "name": "sku",
+    "label": "کد ردیف",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "product",
+    "label": "محصول",
+    "type": "lookup",
+    "required": true,
+    "options": null,
+    "ref": "products"
+   },
+   {
+    "name": "warehouse",
+    "label": "انبار",
+    "type": "select",
+    "required": false,
+    "options": {
+     "tehran": "انبار تهران",
+     "isfahan": "انبار اصفهان",
+     "tabriz": "انبار تبریز"
+    },
+    "ref": null
+   },
+   {
+    "name": "quantity",
+    "label": "تعداد",
+    "type": "number",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "reorderLevel",
+    "label": "نقطه سفارش",
+    "type": "number",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "status",
+    "label": "وضعیت",
+    "type": "select",
+    "required": false,
+    "options": {
+     "in": "موجود",
+     "low": "کم‌موجودی",
+     "out": "ناموجود"
+    },
+    "ref": null
+   }
+  ]
+ },
+ {
+  "key": "assets",
+  "apiPath": "assets",
+  "label": "دارایی‌ها",
+  "singular": "دارایی",
+  "group": "catalog",
+  "titleField": "name",
+  "statusField": "status",
+  "fields": [
+   {
+    "name": "name",
+    "label": "نام دارایی",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "serial",
+    "label": "شماره سریال",
+    "type": "text",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "organization",
+    "label": "مشتری",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "organizations"
+   },
+   {
+    "name": "status",
+    "label": "وضعیت",
+    "type": "select",
+    "required": false,
+    "options": {
+     "in_service": "در حال استفاده",
+     "in_stock": "در انبار",
+     "retired": "خارج از رده"
+    },
+    "ref": null
+   },
+   {
+    "name": "purchaseDate",
+    "label": "تاریخ خرید",
+    "type": "date",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "warrantyEnd",
+    "label": "پایان گارانتی",
+    "type": "date",
+    "required": false,
+    "options": null,
+    "ref": null
+   }
+  ]
+ },
+ {
+  "key": "campaigns",
+  "apiPath": "campaigns",
+  "label": "کمپین‌ها",
+  "singular": "کمپین",
+  "group": "marketing",
+  "titleField": "name",
+  "statusField": "status",
+  "fields": [
+   {
+    "name": "name",
+    "label": "نام کمپین",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "type",
+    "label": "نوع",
+    "type": "select",
+    "required": false,
+    "options": {
+     "email": "ایمیل",
+     "sms": "پیامک",
+     "event": "همایش",
+     "ads": "تبلیغات"
+    },
+    "ref": null
+   },
+   {
+    "name": "status",
+    "label": "وضعیت",
+    "type": "select",
+    "required": true,
+    "options": {
+     "planning": "برنامه‌ریزی",
+     "active": "فعال",
+     "paused": "متوقف",
+     "completed": "تکمیل شده"
+    },
+    "ref": null
+   },
+   {
+    "name": "budget",
+    "label": "بودجه",
+    "type": "money",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "actualCost",
+    "label": "هزینه واقعی",
+    "type": "money",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "expectedLeads",
+    "label": "سرنخ مورد انتظار",
+    "type": "number",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "startDate",
+    "label": "شروع",
+    "type": "date",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "endDate",
+    "label": "پایان",
+    "type": "date",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "assignedTo",
+    "label": "مسئول",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "users"
+   },
+   {
+    "name": "description",
+    "label": "توضیحات",
+    "type": "textarea",
+    "required": false,
+    "options": null,
+    "ref": null
+   }
+  ]
+ },
+ {
+  "key": "cases",
+  "apiPath": "cases",
+  "label": "درخواست‌های پشتیبانی",
+  "singular": "درخواست پشتیبانی",
+  "group": "support",
+  "titleField": "subject",
+  "statusField": "status",
+  "fields": [
+   {
+    "name": "subject",
+    "label": "موضوع",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "organization",
+    "label": "سازمان",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "organizations"
+   },
+   {
+    "name": "contact",
+    "label": "مخاطب",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "contacts"
+   },
+   {
+    "name": "status",
+    "label": "وضعیت",
+    "type": "select",
+    "required": true,
+    "options": {
+     "open": "باز",
+     "in_progress": "در حال بررسی",
+     "waiting": "منتظر مشتری",
+     "resolved": "حل شده",
+     "closed": "بسته"
+    },
+    "ref": null
+   },
+   {
+    "name": "priority",
+    "label": "اولویت",
+    "type": "select",
+    "required": true,
+    "options": {
+     "low": "کم",
+     "medium": "متوسط",
+     "high": "زیاد",
+     "urgent": "فوری"
+    },
+    "ref": null
+   },
+   {
+    "name": "number",
+    "label": "شماره",
+    "type": "text",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "assignedTo",
+    "label": "مسئول",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "users"
+   },
+   {
+    "name": "description",
+    "label": "شرح مشکل",
+    "type": "textarea",
+    "required": false,
+    "options": null,
+    "ref": null
+   }
+  ]
+ },
+ {
+  "key": "faq",
+  "apiPath": "faq",
+  "label": "پرسش‌های متداول",
+  "singular": "پرسش متداول",
+  "group": "support",
+  "titleField": "question",
+  "statusField": "status",
+  "fields": [
+   {
+    "name": "question",
+    "label": "پرسش",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "category",
+    "label": "دسته‌بندی",
+    "type": "select",
+    "required": false,
+    "options": {
+     "consulting": "مشاوره",
+     "support": "پشتیبانی",
+     "training": "آموزش",
+     "installation": "نصب و راه‌اندازی"
+    },
+    "ref": null
+   },
+   {
+    "name": "status",
+    "label": "وضعیت",
+    "type": "select",
+    "required": false,
+    "options": {
+     "draft": "پیش‌نویس",
+     "published": "منتشر شده"
+    },
+    "ref": null
+   },
+   {
+    "name": "answer",
+    "label": "پاسخ",
+    "type": "textarea",
+    "required": true,
+    "options": null,
+    "ref": null
+   }
+  ]
+ },
+ {
+  "key": "projects",
+  "apiPath": "projects",
+  "label": "پروژه‌ها",
+  "singular": "پروژه",
+  "group": "projects",
+  "titleField": "name",
+  "statusField": "status",
+  "fields": [
+   {
+    "name": "name",
+    "label": "نام پروژه",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "organization",
+    "label": "مشتری",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "organizations"
+   },
+   {
+    "name": "status",
+    "label": "وضعیت",
+    "type": "select",
+    "required": false,
+    "options": {
+     "not_started": "شروع نشده",
+     "active": "در حال اجرا",
+     "on_hold": "متوقف",
+     "completed": "تکمیل شده"
+    },
+    "ref": null
+   },
+   {
+    "name": "progress",
+    "label": "پیشرفت (٪)",
+    "type": "number",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "priority",
+    "label": "اولویت",
+    "type": "select",
+    "required": false,
+    "options": {
+     "low": "کم",
+     "medium": "متوسط",
+     "high": "زیاد",
+     "urgent": "فوری"
+    },
+    "ref": null
+   },
+   {
+    "name": "startDate",
+    "label": "شروع",
+    "type": "date",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "endDate",
+    "label": "پایان",
+    "type": "date",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "budget",
+    "label": "بودجه",
+    "type": "money",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "assignedTo",
+    "label": "مسئول",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "users"
+   }
+  ]
+ },
+ {
+  "key": "projectTasks",
+  "apiPath": "project-tasks",
+  "label": "وظایف پروژه",
+  "singular": "وظیفه پروژه",
+  "group": "projects",
+  "titleField": "name",
+  "statusField": "status",
+  "fields": [
+   {
+    "name": "name",
+    "label": "عنوان",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "project",
+    "label": "پروژه",
+    "type": "lookup",
+    "required": true,
+    "options": null,
+    "ref": "projects"
+   },
+   {
+    "name": "status",
+    "label": "وضعیت",
+    "type": "select",
+    "required": false,
+    "options": {
+     "todo": "انجام نشده",
+     "in_progress": "در حال انجام",
+     "waiting": "در انتظار",
+     "done": "تکمیل شده"
+    },
+    "ref": null
+   },
+   {
+    "name": "priority",
+    "label": "اولویت",
+    "type": "select",
+    "required": false,
+    "options": {
+     "low": "کم",
+     "medium": "متوسط",
+     "high": "زیاد",
+     "urgent": "فوری"
+    },
+    "ref": null
+   },
+   {
+    "name": "hours",
+    "label": "ساعت تخمینی",
+    "type": "number",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "dueDate",
+    "label": "مهلت",
+    "type": "date",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "assignedTo",
+    "label": "مسئول",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "users"
+   }
+  ]
+ },
+ {
+  "key": "tasks",
+  "apiPath": "tasks",
+  "label": "وظایف",
+  "singular": "وظیفه",
+  "group": "productivity",
+  "titleField": "title",
+  "statusField": "status",
+  "fields": [
+   {
+    "name": "title",
+    "label": "عنوان",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "status",
+    "label": "وضعیت",
+    "type": "select",
+    "required": true,
+    "options": {
+     "todo": "انجام نشده",
+     "in_progress": "در حال انجام",
+     "waiting": "در انتظار",
+     "done": "تکمیل شده"
+    },
+    "ref": null
+   },
+   {
+    "name": "priority",
+    "label": "اولویت",
+    "type": "select",
+    "required": false,
+    "options": {
+     "low": "کم",
+     "medium": "متوسط",
+     "high": "زیاد",
+     "urgent": "فوری"
+    },
+    "ref": null
+   },
+   {
+    "name": "dueDate",
+    "label": "مهلت",
+    "type": "date",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "opportunity",
+    "label": "فرصت فروش",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "opportunities"
+   },
+   {
+    "name": "case",
+    "label": "درخواست پشتیبانی",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "cases"
+   },
+   {
+    "name": "assignedTo",
+    "label": "مسئول",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "users"
+   },
+   {
+    "name": "description",
+    "label": "توضیحات",
+    "type": "textarea",
+    "required": false,
+    "options": null,
+    "ref": null
+   }
+  ]
+ },
+ {
+  "key": "events",
+  "apiPath": "events",
+  "label": "رویدادها",
+  "singular": "رویداد",
+  "group": "productivity",
+  "titleField": "title",
+  "statusField": "status",
+  "fields": [
+   {
+    "name": "title",
+    "label": "عنوان",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "type",
+    "label": "نوع",
+    "type": "select",
+    "required": false,
+    "options": {
+     "meeting": "جلسه",
+     "call": "تماس",
+     "visit": "بازدید",
+     "demo": "ارائه محصول"
+    },
+    "ref": null
+   },
+   {
+    "name": "status",
+    "label": "وضعیت",
+    "type": "select",
+    "required": false,
+    "options": {
+     "planned": "برنامه‌ریزی شده",
+     "held": "برگزار شد",
+     "cancelled": "لغو شد"
+    },
+    "ref": null
+   },
+   {
+    "name": "startDate",
+    "label": "تاریخ",
+    "type": "date",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "location",
+    "label": "مکان",
+    "type": "text",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "contact",
+    "label": "مخاطب",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "contacts"
+   },
+   {
+    "name": "assignedTo",
+    "label": "مسئول",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "users"
+   }
+  ]
+ },
+ {
+  "key": "emails",
+  "apiPath": "emails",
+  "label": "ایمیل‌ها",
+  "singular": "ایمیل",
+  "group": "productivity",
+  "titleField": "subject",
+  "statusField": "folder",
+  "fields": [
+   {
+    "name": "subject",
+    "label": "موضوع",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "folder",
+    "label": "پوشه",
+    "type": "select",
+    "required": false,
+    "options": {
+     "inbox": "دریافتی",
+     "sent": "ارسالی",
+     "draft": "پیش‌نویس"
+    },
+    "ref": null
+   },
+   {
+    "name": "from",
+    "label": "فرستنده",
+    "type": "email",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "to",
+    "label": "گیرنده",
+    "type": "email",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "contact",
+    "label": "مخاطب",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "contacts"
+   },
+   {
+    "name": "sentDate",
+    "label": "تاریخ",
+    "type": "date",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "body",
+    "label": "متن ایمیل",
+    "type": "textarea",
+    "required": false,
+    "options": null,
+    "ref": null
+   }
+  ]
+ },
+ {
+  "key": "documents",
+  "apiPath": "documents",
+  "label": "اسناد",
+  "singular": "سند",
+  "group": "productivity",
+  "titleField": "title",
+  "statusField": null,
+  "fields": [
+   {
+    "name": "title",
+    "label": "عنوان سند",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "type",
+    "label": "نوع",
+    "type": "select",
+    "required": false,
+    "options": {
+     "contract": "قرارداد",
+     "proposal": "پیشنهاد",
+     "invoice": "فاکتور",
+     "report": "گزارش",
+     "other": "سایر"
+    },
+    "ref": null
+   },
+   {
+    "name": "organization",
+    "label": "سازمان",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "organizations"
+   },
+   {
+    "name": "sizeKb",
+    "label": "حجم (کیلوبایت)",
+    "type": "number",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "assignedTo",
+    "label": "مسئول",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "users"
+   },
+   {
+    "name": "uploadedAt",
+    "label": "تاریخ بارگذاری",
+    "type": "date",
+    "required": false,
+    "options": null,
+    "ref": null
+   }
+  ]
+ },
+ {
+  "key": "users",
+  "apiPath": "users",
+  "label": "کاربران",
+  "singular": "کاربر",
+  "group": "admin",
+  "titleField": "name",
+  "statusField": "status",
+  "fields": [
+   {
+    "name": "name",
+    "label": "نام کامل",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "email",
+    "label": "ایمیل",
+    "type": "email",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "phone",
+    "label": "تلفن همراه",
+    "type": "phone",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "role",
+    "label": "نقش",
+    "type": "lookup",
+    "required": true,
+    "options": null,
+    "ref": "roles"
+   },
+   {
+    "name": "team",
+    "label": "تیم",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "teams"
+   },
+   {
+    "name": "status",
+    "label": "وضعیت",
+    "type": "select",
+    "required": false,
+    "options": {
+     "active": "فعال",
+     "inactive": "غیرفعال"
+    },
+    "ref": null
+   }
+  ]
+ },
+ {
+  "key": "roles",
+  "apiPath": "roles",
+  "label": "نقش‌ها",
+  "singular": "نقش",
+  "group": "admin",
+  "titleField": "name",
+  "statusField": null,
+  "fields": [
+   {
+    "name": "name",
+    "label": "نام نقش",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "kind",
+    "label": "سطح دسترسی",
+    "type": "select",
+    "required": false,
+    "options": {
+     "admin": "مدیر سیستم",
+     "manager": "مدیر",
+     "sales": "فروش",
+     "support": "پشتیبانی",
+     "finance": "مالی"
+    },
+    "ref": null
+   },
+   {
+    "name": "userCount",
+    "label": "تعداد کاربران",
+    "type": "number",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "description",
+    "label": "توضیحات",
+    "type": "textarea",
+    "required": false,
+    "options": null,
+    "ref": null
+   }
+  ]
+ },
+ {
+  "key": "teams",
+  "apiPath": "teams",
+  "label": "تیم‌ها",
+  "singular": "تیم",
+  "group": "admin",
+  "titleField": "name",
+  "statusField": null,
+  "fields": [
+   {
+    "name": "name",
+    "label": "نام تیم",
+    "type": "text",
+    "required": true,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "leader",
+    "label": "سرپرست",
+    "type": "lookup",
+    "required": false,
+    "options": null,
+    "ref": "users"
+   },
+   {
+    "name": "members",
+    "label": "تعداد اعضا",
+    "type": "number",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "monthlyTarget",
+    "label": "هدف ماهانه",
+    "type": "money",
+    "required": false,
+    "options": null,
+    "ref": null
+   },
+   {
+    "name": "description",
+    "label": "توضیحات",
+    "type": "textarea",
+    "required": false,
+    "options": null,
+    "ref": null
+   }
+  ]
+ }
+]

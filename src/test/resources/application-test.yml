@@ -1,0 +1,4 @@
+app:
+  security.jwt.secret: test-secret-test-secret-test-secret-1234
+  bootstrap.admin-password: Admin@12345
+spring.modulith.events.republish-outstanding-events-on-restart: false

@@ -1,0 +1,6 @@
+# Local development only. Never reuse these values in production.
+app:
+  security.jwt.secret: dev-only-secret-change-me-0123456789abcdef
+  bootstrap.admin-password: admin123
+logging.level:
+  ir.crm: DEBUG
